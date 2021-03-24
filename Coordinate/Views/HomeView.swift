@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject var locationManager = LocationManager()
-    @ObservedObject var settings = Settings()
+    @EnvironmentObject var settings: Settings
 
     var userLatitude: String {
         return "\(locationManager.lastLocation?.coordinate.latitude.truncate(places: Int(settings.locationSpecificity)) ?? 0)"
@@ -27,8 +27,6 @@ struct HomeView: View {
                  .padding(.bottom, 20)
             Text("latitude: \(userLatitude)").font(.title3)
             Text("longitude: \(userLongitude)").font(.title3)
-            Text("\(settings.locationSpecificity)")
-             
             Button(){
                  OpenInAppleMaps(name: "My Location", coordinate: locationManager.lastLocation!.coordinate)
             } label: {
@@ -45,8 +43,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView()
+//    }
+//}

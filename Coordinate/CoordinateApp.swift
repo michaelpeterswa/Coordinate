@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct CoordinateApp: App {
+    var settings = Settings()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(settings)
         }
     }
 }

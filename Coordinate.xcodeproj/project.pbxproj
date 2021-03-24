@@ -20,6 +20,8 @@
 		C74A4F58260A954C00DA051F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A4F57260A954C00DA051F /* LocationManager.swift */; };
 		C74A4F5D260A959C00DA051F /* TruncateDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A4F5C260A959C00DA051F /* TruncateDouble.swift */; };
 		C74A4F62260A967A00DA051F /* OpenInAppleMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A4F61260A967A00DA051F /* OpenInAppleMaps.swift */; };
+		C7FDF4CA260AC78E00F5D87F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDF4C9260AC78E00F5D87F /* Settings.swift */; };
+		C7FDF4DA260AF7FD00F5D87F /* CoordinateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDF4D9260AF7FD00F5D87F /* CoordinateData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		C74A4F57260A954C00DA051F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C74A4F5C260A959C00DA051F /* TruncateDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruncateDouble.swift; sourceTree = "<group>"; };
 		C74A4F61260A967A00DA051F /* OpenInAppleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInAppleMaps.swift; sourceTree = "<group>"; };
+		C7FDF4C9260AC78E00F5D87F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C7FDF4D9260AF7FD00F5D87F /* CoordinateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		C74A4F07260A6FDD00DA051F /* Coordinate */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDF4C8260AC76E00F5D87F /* Models */,
 				C74A4F56260A951900DA051F /* Utilities */,
 				C74A4F39260A763800DA051F /* Views */,
 				C74A4F08260A6FDD00DA051F /* CoordinateApp.swift */,
@@ -165,6 +170,15 @@
 				C74A4F61260A967A00DA051F /* OpenInAppleMaps.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C7FDF4C8260AC76E00F5D87F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDF4C9260AC78E00F5D87F /* Settings.swift */,
+				C7FDF4D9260AF7FD00F5D87F /* CoordinateData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,10 +310,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7FDF4DA260AF7FD00F5D87F /* CoordinateData.swift in Sources */,
 				C74A4F5D260A959C00DA051F /* TruncateDouble.swift in Sources */,
 				C74A4F0B260A6FDD00DA051F /* ContentView.swift in Sources */,
 				C74A4F43260A858F00DA051F /* HelpView.swift in Sources */,
 				C74A4F62260A967A00DA051F /* OpenInAppleMaps.swift in Sources */,
+				C7FDF4CA260AC78E00F5D87F /* Settings.swift in Sources */,
 				C74A4F52260A94F900DA051F /* ServerConnectView.swift in Sources */,
 				C74A4F58260A954C00DA051F /* LocationManager.swift in Sources */,
 				C74A4F09260A6FDD00DA051F /* CoordinateApp.swift in Sources */,
