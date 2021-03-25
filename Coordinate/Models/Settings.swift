@@ -15,7 +15,7 @@ class Settings: ObservableObject {
         .replacingOccurrences(of: " ", with: "")
     @Published var apiKey = ""
     @Published var coordinateURL = ""
-    @Published var enabled = true
+    @Published var enabled = false
     @Published var locationSpecificity: Float = 4
     @Published var timeString = ""
     @Published var distanceString = ""

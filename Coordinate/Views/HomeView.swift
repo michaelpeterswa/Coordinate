@@ -11,6 +11,7 @@ struct HomeView: View {
     
     @ObservedObject var locationManager = LocationManager()
     @EnvironmentObject var settings: Settings
+    @State var coordinates: [Coordinate] = []
 
     var userLatitude: String {
         return "\(locationManager.lastLocation?.coordinate.latitude.truncate(places: Int(settings.locationSpecificity)) ?? 0)"
@@ -37,9 +38,16 @@ struct HomeView: View {
             }
             .padding(.top, 20)
             Spacer()
-             
         }
         .padding(.top, 40)
+        .onAppear {
+            // https://developer.apple.com/forums/thread/656655
+            if settings.enabled {
+                CoordinateRequest().getCoordinates(theURL: settings.coordinateURL, theKey: settings.apiKey) { (coordinates) in
+                    self.coordinates = coordinates
+                }
+            }
+        }
     }
 }
 
