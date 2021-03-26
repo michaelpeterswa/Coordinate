@@ -10,7 +10,7 @@ import SwiftUI
 struct AboutView: View {
     var body: some View {
         VStack {
-            Image("trailheads")
+            Image("coordinate")
                 .resizable()
                 .frame(width: 150, height: 150)
                 .clipShape(Circle())
