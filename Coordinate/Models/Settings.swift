@@ -36,8 +36,7 @@ class Settings: ObservableObject {
     }
     
     init() {
-        // self.speed = (UserDefaults.standard.object(forKey: "speed") == nil ? Speed.mph : Speed(rawValue: UserDefaults.standard.object(forKey: "speed") as! Int)) ?? Speed.mph
-        self.deviceName = UserDefaults.standard.string(forKey: "device") ?? "device"
+        self.deviceName = UserDefaults.standard.string(forKey: "device") ?? UIDevice.current.name
         self.apiKey = UserDefaults.standard.string(forKey: "apikey") ?? ""
         self.coordinateURL = UserDefaults.standard.string(forKey: "coordinateurl") ?? ""
         self.enabled = UserDefaults.standard.bool(forKey: "enabled")

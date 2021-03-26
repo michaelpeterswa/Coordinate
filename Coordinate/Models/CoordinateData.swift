@@ -32,7 +32,7 @@ class CoordinateRequest {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Api-Key \(theKey)", forHTTPHeaderField: "Authorization")
-        print(request.allHTTPHeaderFields!)
+//        print(request.allHTTPHeaderFields!)
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data {
                 if let coordinates = try? JSONDecoder().decode([Coordinate].self, from: data) {

@@ -13,6 +13,8 @@ struct HomeView: View {
     @EnvironmentObject var settings: Settings
     @State var coordinates: [Coordinate] = []
     @State var count = 0
+    @State private var sendTimer: Timer?
+    @State var timerOn: Bool = false
 
     var userLatitude: String {
         return "\(locationManager.lastLocation?.coordinate.latitude.truncate(places: Int(settings.locationSpecificity)) ?? 0)"
@@ -41,16 +43,17 @@ struct HomeView: View {
                      }
             }
             .padding(.top, 20)
-            PostButton(settings: settings, currLat: userLatitude, currLon: userLongitude)
-            if coordinates.count != 0 {
-                List(coordinates) {coordinate in
-                    CoordinateRow(coordinate: coordinate)
-                }
-                .padding(.trailing, 20)
-            }
-            else {
-                Text("Data not loaded.").font(.title2)
-            }
+            Button(){
+                self.sendTimer?.invalidate()
+                self.timerOn = false
+            } label: {
+                     VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
+                         Text("Stop Timer")
+                             .foregroundColor(.accentColor)
+                     }
+            }.padding(.bottom, 20)
+//            PostButton(settings: settings, currLat: userLatitude, currLon: userLongitude)
+            CoordinateList(coordinates: self.coordinates)
             Spacer()
         }
         .padding(.top, 40)
@@ -59,18 +62,19 @@ struct HomeView: View {
             if settings.enabled {
                 CoordinateRequest().getCoordinates(theURL: settings.coordinateURL, theKey: settings.apiKey) { (coordinates) in
                     self.coordinates = coordinates
-                let _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
-                    print("sending location... \(count)")
-                    let pos = OutboundCoordinate(device: settings.deviceName, lat: userLatitude, lon: userLongitude)
-                    SendPosition(posData: pos, theURL: settings.coordinateURL, theKey: settings.apiKey)
-                    count += 1
+                    if !self.timerOn {
+                        self.sendTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+                            self.timerOn = true
+                            let pos = OutboundCoordinate(device: settings.deviceName, lat: userLatitude, lon: userLongitude)
+                            SendPosition(posData: pos, theURL: settings.coordinateURL, theKey: settings.apiKey)
+                            count += 1
+                        }
                     }
                 }
             }
         }
     }
 }
-
 //struct HomeView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        HomeView()

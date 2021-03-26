@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7210AB6260E56F2006A82E0 /* CoordinateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7210AB5260E56F2006A82E0 /* CoordinateView.swift */; };
+		C7210ABB260E5912006A82E0 /* CoordinateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7210ABA260E5912006A82E0 /* CoordinateList.swift */; };
+		C7210AC0260E5E81006A82E0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7210ABF260E5E81006A82E0 /* MapView.swift */; };
 		C74A4F09260A6FDD00DA051F /* CoordinateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A4F08260A6FDD00DA051F /* CoordinateApp.swift */; };
 		C74A4F0B260A6FDD00DA051F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A4F0A260A6FDD00DA051F /* ContentView.swift */; };
 		C74A4F0D260A6FE400DA051F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74A4F0C260A6FE400DA051F /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C7210AB5260E56F2006A82E0 /* CoordinateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateView.swift; sourceTree = "<group>"; };
+		C7210ABA260E5912006A82E0 /* CoordinateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateList.swift; sourceTree = "<group>"; };
+		C7210ABF260E5E81006A82E0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		C74A4F05260A6FDD00DA051F /* Coordinate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coordinate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74A4F08260A6FDD00DA051F /* CoordinateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateApp.swift; sourceTree = "<group>"; };
 		C74A4F0A260A6FDD00DA051F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +176,9 @@
 				C74A4F4C260A8A4200DA051F /* HomeView.swift */,
 				C76C4D81260D3241002BB165 /* CoordinateRow.swift */,
 				C76C4D8B260D4C73002BB165 /* PostButton.swift */,
+				C7210AB5260E56F2006A82E0 /* CoordinateView.swift */,
+				C7210ABA260E5912006A82E0 /* CoordinateList.swift */,
+				C7210ABF260E5E81006A82E0 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +337,7 @@
 				C7FDF4DA260AF7FD00F5D87F /* CoordinateData.swift in Sources */,
 				C74A4F5D260A959C00DA051F /* TruncateDouble.swift in Sources */,
 				C74A4F0B260A6FDD00DA051F /* ContentView.swift in Sources */,
+				C7210ABB260E5912006A82E0 /* CoordinateList.swift in Sources */,
 				C74A4F43260A858F00DA051F /* HelpView.swift in Sources */,
 				C74A4F62260A967A00DA051F /* OpenInAppleMaps.swift in Sources */,
 				C7FDF4CA260AC78E00F5D87F /* Settings.swift in Sources */,
@@ -335,9 +345,11 @@
 				C76C4D87260D3787002BB165 /* EpochToDate.swift in Sources */,
 				C74A4F58260A954C00DA051F /* LocationManager.swift in Sources */,
 				C76C4D96260D510B002BB165 /* OutboundCoordinateData.swift in Sources */,
+				C7210AB6260E56F2006A82E0 /* CoordinateView.swift in Sources */,
 				C76C4D91260D4D74002BB165 /* SendPosition.swift in Sources */,
 				C74A4F09260A6FDD00DA051F /* CoordinateApp.swift in Sources */,
 				C74A4F4D260A8A4200DA051F /* HomeView.swift in Sources */,
+				C7210AC0260E5E81006A82E0 /* MapView.swift in Sources */,
 				C76C4D8C260D4C73002BB165 /* PostButton.swift in Sources */,
 				C76C4D82260D3241002BB165 /* CoordinateRow.swift in Sources */,
 				C74A4F48260A8A2000DA051F /* AboutView.swift in Sources */,
