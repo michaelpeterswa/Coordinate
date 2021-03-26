@@ -20,6 +20,11 @@
 		C74A4F58260A954C00DA051F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A4F57260A954C00DA051F /* LocationManager.swift */; };
 		C74A4F5D260A959C00DA051F /* TruncateDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A4F5C260A959C00DA051F /* TruncateDouble.swift */; };
 		C74A4F62260A967A00DA051F /* OpenInAppleMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A4F61260A967A00DA051F /* OpenInAppleMaps.swift */; };
+		C76C4D82260D3241002BB165 /* CoordinateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C4D81260D3241002BB165 /* CoordinateRow.swift */; };
+		C76C4D87260D3787002BB165 /* EpochToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C4D86260D3787002BB165 /* EpochToDate.swift */; };
+		C76C4D8C260D4C73002BB165 /* PostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C4D8B260D4C73002BB165 /* PostButton.swift */; };
+		C76C4D91260D4D74002BB165 /* SendPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C4D90260D4D74002BB165 /* SendPosition.swift */; };
+		C76C4D96260D510B002BB165 /* OutboundCoordinateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C4D95260D510B002BB165 /* OutboundCoordinateData.swift */; };
 		C7FDF4CA260AC78E00F5D87F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDF4C9260AC78E00F5D87F /* Settings.swift */; };
 		C7FDF4DA260AF7FD00F5D87F /* CoordinateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDF4D9260AF7FD00F5D87F /* CoordinateData.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +66,11 @@
 		C74A4F57260A954C00DA051F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C74A4F5C260A959C00DA051F /* TruncateDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruncateDouble.swift; sourceTree = "<group>"; };
 		C74A4F61260A967A00DA051F /* OpenInAppleMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInAppleMaps.swift; sourceTree = "<group>"; };
+		C76C4D81260D3241002BB165 /* CoordinateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateRow.swift; sourceTree = "<group>"; };
+		C76C4D86260D3787002BB165 /* EpochToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpochToDate.swift; sourceTree = "<group>"; };
+		C76C4D8B260D4C73002BB165 /* PostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButton.swift; sourceTree = "<group>"; };
+		C76C4D90260D4D74002BB165 /* SendPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPosition.swift; sourceTree = "<group>"; };
+		C76C4D95260D510B002BB165 /* OutboundCoordinateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundCoordinateData.swift; sourceTree = "<group>"; };
 		C7FDF4C9260AC78E00F5D87F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C7FDF4D9260AF7FD00F5D87F /* CoordinateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +168,8 @@
 				C74A4F42260A858F00DA051F /* HelpView.swift */,
 				C74A4F47260A8A2000DA051F /* AboutView.swift */,
 				C74A4F4C260A8A4200DA051F /* HomeView.swift */,
+				C76C4D81260D3241002BB165 /* CoordinateRow.swift */,
+				C76C4D8B260D4C73002BB165 /* PostButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +180,8 @@
 				C74A4F57260A954C00DA051F /* LocationManager.swift */,
 				C74A4F5C260A959C00DA051F /* TruncateDouble.swift */,
 				C74A4F61260A967A00DA051F /* OpenInAppleMaps.swift */,
+				C76C4D86260D3787002BB165 /* EpochToDate.swift */,
+				C76C4D90260D4D74002BB165 /* SendPosition.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -177,6 +191,7 @@
 			children = (
 				C7FDF4C9260AC78E00F5D87F /* Settings.swift */,
 				C7FDF4D9260AF7FD00F5D87F /* CoordinateData.swift */,
+				C76C4D95260D510B002BB165 /* OutboundCoordinateData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,9 +332,14 @@
 				C74A4F62260A967A00DA051F /* OpenInAppleMaps.swift in Sources */,
 				C7FDF4CA260AC78E00F5D87F /* Settings.swift in Sources */,
 				C74A4F52260A94F900DA051F /* ServerConnectView.swift in Sources */,
+				C76C4D87260D3787002BB165 /* EpochToDate.swift in Sources */,
 				C74A4F58260A954C00DA051F /* LocationManager.swift in Sources */,
+				C76C4D96260D510B002BB165 /* OutboundCoordinateData.swift in Sources */,
+				C76C4D91260D4D74002BB165 /* SendPosition.swift in Sources */,
 				C74A4F09260A6FDD00DA051F /* CoordinateApp.swift in Sources */,
 				C74A4F4D260A8A4200DA051F /* HomeView.swift in Sources */,
+				C76C4D8C260D4C73002BB165 /* PostButton.swift in Sources */,
+				C76C4D82260D3241002BB165 /* CoordinateRow.swift in Sources */,
 				C74A4F48260A8A2000DA051F /* AboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@ struct HomeView: View {
     @ObservedObject var locationManager = LocationManager()
     @EnvironmentObject var settings: Settings
     @State var coordinates: [Coordinate] = []
+    @State var count = 0
 
     var userLatitude: String {
         return "\(locationManager.lastLocation?.coordinate.latitude.truncate(places: Int(settings.locationSpecificity)) ?? 0)"
@@ -23,20 +24,33 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            Text("Current GPS Data")
+            Text("Coordinate")
                  .font(.largeTitle)
                  .padding(.bottom, 20)
             Text("latitude: \(userLatitude)").font(.title3)
             Text("longitude: \(userLongitude)").font(.title3)
             Button(){
-                 OpenInAppleMaps(name: "My Location", coordinate: locationManager.lastLocation!.coordinate)
+                CoordinateRequest().getCoordinates(theURL: settings.coordinateURL, theKey: settings.apiKey) { (coordinates) in
+                    self.coordinates = coordinates
+                    
+                }
             } label: {
                      VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
-                         Text("Open My Location in Apple Maps")
+                         Text("Refresh")
                              .foregroundColor(.accentColor)
                      }
             }
             .padding(.top, 20)
+            PostButton(settings: settings, currLat: userLatitude, currLon: userLongitude)
+            if coordinates.count != 0 {
+                List(coordinates) {coordinate in
+                    CoordinateRow(coordinate: coordinate)
+                }
+                .padding(.trailing, 20)
+            }
+            else {
+                Text("Data not loaded.").font(.title2)
+            }
             Spacer()
         }
         .padding(.top, 40)
@@ -45,6 +59,12 @@ struct HomeView: View {
             if settings.enabled {
                 CoordinateRequest().getCoordinates(theURL: settings.coordinateURL, theKey: settings.apiKey) { (coordinates) in
                     self.coordinates = coordinates
+                let _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+                    print("sending location... \(count)")
+                    let pos = OutboundCoordinate(device: settings.deviceName, lat: userLatitude, lon: userLongitude)
+                    SendPosition(posData: pos, theURL: settings.coordinateURL, theKey: settings.apiKey)
+                    count += 1
+                    }
                 }
             }
         }
